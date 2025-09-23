@@ -4,7 +4,7 @@ const cors= require('cors')
 const app = express()
 const connectDB = require('./config/mongo')
 const {connectPostgres} = require('./config/postgres')
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3000
 
 // Connect Database
 connectDB()
@@ -13,6 +13,7 @@ connectPostgres()
 
 // Middleware
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
 // Define Routes    
