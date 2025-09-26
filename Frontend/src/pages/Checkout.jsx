@@ -6,7 +6,6 @@ export default function Checkout() {
   const [loading, setLoading] = useState(false);
   const [totalCost, setTotalCost] = useState(0);
 
- 
   const loadCart = async () => {
     try {
       const res = await getCart();
