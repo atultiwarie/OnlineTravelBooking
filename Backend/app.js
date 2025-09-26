@@ -13,10 +13,12 @@ connectPostgres()
 // cors
 app.use(
   cors({
-    origin: "http://localhost:5173", // React app
+    origin: "https://online-travel-booking.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 
 
 // Middleware
