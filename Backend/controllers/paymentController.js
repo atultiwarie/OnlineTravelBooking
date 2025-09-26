@@ -9,7 +9,7 @@ const razorpay = new Razorpay({
 // Create Razorpay order
 const createOrder = async (req, res) => {
   try {
-    const { bookingId, amount } = req.body; 
+    const { bookingId, amount } = req.body;
     const options = {
       amount: amount * 100,
       currency: "INR",

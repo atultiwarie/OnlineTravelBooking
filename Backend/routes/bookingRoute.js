@@ -6,11 +6,13 @@ const {
   verifyPayment,
 } = require("../controllers/paymentController");
 
-// Create booking from cart
-router.post("/create", createBooking);
+const authMiddleware = require("../middlewares/authMiddleware");
 
-// Payment routes
-router.post("/payment/order", createOrder);
-router.post("/payment/verify", verifyPayment);
+
+router.post("/create", authMiddleware, createBooking);
+
+
+router.post("/payment/order", authMiddleware, createOrder);
+router.post("/payment/verify", authMiddleware, verifyPayment);
 
 module.exports = router;

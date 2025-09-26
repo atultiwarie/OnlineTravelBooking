@@ -16,7 +16,13 @@ const Booking = sequelize.define(
     checkin: { type: DataTypes.DATEONLY },
     checkout: { type: DataTypes.DATEONLY },
     guests: { type: DataTypes.INTEGER },
+
     status: { type: DataTypes.STRING, defaultValue: "pending" },
+
+  
+    paymentStatus: { type: DataTypes.STRING, defaultValue: "pending" }, 
+    paymentMethod: { type: DataTypes.STRING }, 
+    transactionId: { type: DataTypes.STRING }, 
   },
   { tableName: "bookings" }
 );

@@ -10,6 +10,14 @@ const PORT = process.env.PORT || 3000
 connectDB()
 connectPostgres()
 
+// cors
+app.use(
+  cors({
+    origin: "http://localhost:5173", // React app
+    credentials: true,
+  })
+);
+
 
 // Middleware
 app.use(express.json())
@@ -25,6 +33,7 @@ app.get('/', (req, res) => {
 app.use('/api/hotels', require('./routes/hotelRoute'))
 app.use('/api/auth', require('./routes/authRoute'))
 app.use('/api/cart', require('./routes/cartRoute'))
+app.use('/api/bookings', require("./routes/bookingRoute"))
 
 
 app.listen(PORT, console.log(`Server running on port  http://localhost:${PORT}`))
